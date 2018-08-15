@@ -26,5 +26,10 @@ namespace AspNetMvc.QuickStart.Controllers
 
             return View();
         }
+
+        public string Welcome(string name)
+        {
+            return name + " Welcome!";
+        }
     }
 }
