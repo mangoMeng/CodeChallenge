@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace AspNetMvc.QuickStart.Controllers
 {
@@ -27,9 +28,28 @@ namespace AspNetMvc.QuickStart.Controllers
             return View();
         }
 
-        public string Welcome(string name)
+        public ActionResult Login()
         {
-            return name + " Welcome!";
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(string UserName, string Password)
+        {
+            if (UserName == "Jason" && Password == "123456")
+            {
+                FormsAuthentication.RedirectFromLoginPage("Jason", false);
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
