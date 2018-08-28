@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ConsoleApp1.Linq</StartupObject>
+    <StartupObject>ConsoleApp1.MainRun</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -51,6 +51,7 @@
     <Compile Include="Incrementer.cs" />
     <Compile Include="Interface.cs" />
     <Compile Include="Linq.cs" />
+    <Compile Include="MyDownloadString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
